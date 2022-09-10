@@ -21,9 +21,7 @@
         <span>Bianka Zieba</span>
       </v-btn>
     </v-app-bar>
-    <v-main>
-      <v-card height="50px"></v-card>
-    </v-main>
+    <v-main> </v-main>
   </v-layout>
 </template>
 <script>
