@@ -7,6 +7,15 @@
 
       <v-spacer></v-spacer>
 
+      <v-btn
+        @click="this.$emit('toggleTheme')"
+        class="mr-4 ml-5"
+        variant="outlined"
+        plain
+        ><v-icon left icon="mdi-theme-light-dark"></v-icon
+        ><span>Toggle dark mode</span></v-btn
+      >
+
       <v-divider inset vertical></v-divider>
 
       <v-btn
@@ -28,5 +37,6 @@
 export default {
   name: "Navbar",
   data: () => ({}),
+  emits: ["toggleTheme"],
 };
 </script>

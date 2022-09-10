@@ -1,5 +1,5 @@
 <template>
-  <Navbar />
+  <Navbar @toggleTheme="this.$emit('toggleTheme')" />
   <TodoList />
 </template>
 
@@ -9,7 +9,7 @@ import TodoList from "@/components/TodoList.vue";
 
 export default {
   name: "Todos",
-
   components: { Navbar, TodoList },
+  emits: ["toggleTheme"],
 };
 </script>
