@@ -7,6 +7,19 @@
 
       <v-spacer></v-spacer>
 
+      <v-btn variant="contained-text" class="mr-1 ml-1" @click="openLoginDialog"
+        >Login</v-btn
+      >
+
+      <v-btn
+        variant="contained-text"
+        class="mr-3 ml-1"
+        @click="openRegisterDialog"
+        >Register</v-btn
+      >
+
+      <v-divider inset vertical></v-divider>
+
       <v-btn
         @click="this.$emit('toggleTheme')"
         class="mr-3 ml-3"
@@ -37,6 +50,10 @@
 export default {
   name: "Navbar",
   data: () => ({}),
+  methods: {
+    openRegisterDialog: function () {},
+    openLoginDialog: function () {},
+  },
   emits: ["toggleTheme"],
 };
 </script>
