@@ -1,5 +1,5 @@
 <template>
-  <v-app :theme="theme">
+  <v-app :theme="$store.state.theme">
     <v-main>
       <router-view @toggleTheme="toggleTheme" />
     </v-main>
@@ -7,21 +7,17 @@
 </template>
 
 <script>
-import { ref } from "vue";
-const theme = ref("light");
-
 export default {
   name: "App",
   data: () => ({}),
+  setup() {},
   methods: {
-    toggleTheme: () => {
-      theme.value = theme.value === "light" ? "dark" : "light";
+    toggleTheme: function () {
+      this.$store.commit(
+        "change",
+        this.$store.state.theme === "light" ? "dark" : "light"
+      );
     },
-  },
-  setup() {
-    return {
-      theme,
-    };
   },
 };
 </script>
