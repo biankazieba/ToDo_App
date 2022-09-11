@@ -14,7 +14,7 @@ export default {
   methods: {
     toggleTheme: function () {
       this.$store.commit(
-        "change",
+        "changeTheme",
         this.$store.state.theme === "light" ? "dark" : "light"
       );
     },

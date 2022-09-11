@@ -8,10 +8,14 @@ const vuexLocal = new VuexPersistence({
 export default createStore({
   state: {
     theme: "light",
+    token: "",
   },
   mutations: {
-    change(state, theme) {
+    changeTheme(state, theme) {
       state.theme = theme;
+    },
+    changeToken(state, token) {
+      state.token = token;
     },
   },
   actions: {},
