@@ -9,7 +9,7 @@
 
       <v-btn
         @click="this.$emit('toggleTheme')"
-        class="mr-4 ml-5"
+        class="mr-3 ml-3"
         variant="outlined"
         plain
         ><v-icon left icon="mdi-theme-light-dark"></v-icon
@@ -19,7 +19,7 @@
       <v-divider inset vertical></v-divider>
 
       <v-btn
-        class="mr-4 ml-5"
+        class="mr-5 ml-3"
         color="primary"
         variant="outlined"
         href="https://github.com/biankazieba"
