@@ -7,16 +7,9 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn variant="contained-text" class="mr-1 ml-1" @click="openLoginDialog"
-        >Login</v-btn
-      >
+      <v-btn variant="contained-text" class="mr-1 ml-1">Login</v-btn>
 
-      <v-btn
-        variant="contained-text"
-        class="mr-3 ml-1"
-        @click="openRegisterDialog"
-        >Register</v-btn
-      >
+      <v-btn variant="contained-text" class="mr-3 ml-1">Register</v-btn>
 
       <v-divider inset vertical></v-divider>
 
@@ -50,10 +43,7 @@
 export default {
   name: "Navbar",
   data: () => ({}),
-  methods: {
-    openRegisterDialog: function () {},
-    openLoginDialog: function () {},
-  },
+  methods: {},
   emits: ["toggleTheme"],
 };
 </script>
