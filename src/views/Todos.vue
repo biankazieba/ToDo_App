@@ -59,6 +59,10 @@ export default {
   },
   methods: {
     editTask: function () {
+      if (this.editDescription.trim() === "") {
+        this.editErrorText = "Please enter a description!";
+        return (this.editError = true);
+      }
       fetch(process.env.VUE_APP_API_URL + "/tasks/" + this.editID, {
         method: "POST",
         headers: {
