@@ -3,17 +3,25 @@
     <template v-slot:default>
       <thead>
         <tr>
-          <th class="text-left">ID</th>
-          <th class="text-left">Title</th>
-          <th class="text-left">Completed</th>
+          <th class="text-left">Description</th>
+          <th class="text-left">Updated at</th>
+          <th class="text-left">Edit/Delete</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="todo in todos" :key="todo.id">
-          <td>{{ todo.id }}</td>
-          <td>{{ todo.title }}</td>
+        <tr v-for="todo in todos" :key="todo.updated">
+          <td>{{ todo.description }}</td>
+          <td>{{ todo.updated.slice(0, todo.updated.length - 14) }}</td>
           <td>
-            <v-checkbox v-model="todo.completed" hide-details></v-checkbox>
+            <v-btn
+              color="primary"
+              class="mr-1"
+              @click="this.$emit('editTodoDialog', todo.id)"
+              >Edit</v-btn
+            >
+            <v-btn @click="deleteTask(todo.id)" color="error" class="ml-1 mr-1"
+              >Delete</v-btn
+            >
           </td>
         </tr>
       </tbody>
@@ -28,11 +36,49 @@ export default {
       todos: [],
     };
   },
+  emits: ["editTodoDialog"],
   mounted() {
-    fetch("https://jsonplaceholder.typicode.com/todos")
+    fetch(process.env.VUE_APP_API_URL + "/tasks", {
+      headers: {
+        Authorization: "Bearer " + this.$store.state.token,
+        "Content-Type": "application/json",
+      },
+    })
       .then((res) => res.json())
-      .then((response) => (this.todos = response))
+      .then((response) => (this.todos = response.data))
       .catch((error) => console.error(error));
+  },
+  methods: {
+    onRemove: function (index) {
+      this.todos = [
+        ...this.todos.slice(0, index),
+        ...this.todos.slice(index + 1),
+      ];
+    },
+    deleteTask: function (id) {
+      fetch(process.env.VUE_APP_API_URL + "/tasks/" + id, {
+        method: "DELETE",
+        headers: {
+          Authorization: "Bearer " + this.$store.state.token,
+          "Content-Type": "application/json",
+        },
+      })
+        .then((res) => res.json())
+        .then((response) => {
+          if (response.code === 201) {
+            for (let i = 0; i < this.todos.length; i++) {
+              const todo = this.todos[i];
+              console.log(todo);
+              if (todo.id == id) {
+                this.onRemove(i);
+                break;
+              }
+            }
+          }
+          console.log(response);
+        })
+        .catch((error) => console.error(error));
+    },
   },
 };
 </script>
