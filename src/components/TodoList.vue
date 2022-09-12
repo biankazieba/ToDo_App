@@ -9,7 +9,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="todo in todos" :key="todo.updated">
+        <tr v-for="todo in todos" :key="todo.id">
           <td>{{ todo.description }}</td>
           <td>{{ todo.updated.slice(0, todo.updated.length - 14) }}</td>
           <td>
