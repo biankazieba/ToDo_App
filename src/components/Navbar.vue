@@ -6,7 +6,7 @@
       <v-btn to="/">Todos</v-btn>
 
       <v-dialog v-model="addDialog" persistent>
-        <template v-slot:activator="{ props }">
+        <template v-slot:activator="{ props }" v-if="this.$store.state.token">
           <v-btn color="primary" v-bind="props" class="mr-3 ml-3"> Add </v-btn>
         </template>
         <v-card>
