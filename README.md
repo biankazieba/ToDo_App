@@ -42,13 +42,13 @@ yarn lint
 
 ### Customize configuration
 
-See [Configuration Reference](https://cli.vuejs.org/config/).
+See [Configuration Reference]().
 
 ## Manual test cases
 
 - Without any login, you should see the Register and Login button
 
-  ![login_register](assets/img/login_register.png)
+  ![login_register](assets/img/buttons.png)
 
 - Logged in, you should see the Log out button
 
@@ -56,26 +56,26 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 - You should see the todos as well
 
-  ![todos](assets/img/todos.png)
+  ![todos](assets/img/tasks.png)
 
 - Pressing the "Toggle dark mode" button, it should switch between dark/light mode
 
-  ![darklight](assets/img/darklight.png)
+  ![darklight](assets/img/light.png)
 
 - By pressing the "delete" button, the todo should be deleted
 
-  ![deleted](assets/img/deleted.png)
+  ![deleted](assets/img/delete.png)
 
 - By pressing the "edit" button, a dialog should pop up and the todo can be successfully edited
 
-  ![edit1](assets/img/edit1.png)
+  ![edit1](assets/img/edit.png)
   ![edit2](assets/img/edit2.png)
 
 - The same should be happening with the "add" button
 
-  ![add1](assets/img/add1.png)
-  ![add2](assets/img/add2.png)
+  ![add1](assets/img/add.png)
+  ![add2](assets/img/add1.png)
 
 - By entering a empty description, this error should pop up
 
-  ![error1](assets/img/error1.png)
+  ![error1](assets/img/empty.png)
