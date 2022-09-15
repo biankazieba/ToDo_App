@@ -16,6 +16,8 @@ yarn install
 
 ### Make sure you use the OpenAPI-Backend from the Module 295 (Moodle-ZLI)
 
+- I used Backend from the last ÜK, because this one was easier for me and i had it already (we bacame it from our last ÜK Coach)
+
 Edit the .env file and change the `VUE_APP_API_URL` to the URL of the Backend
 
 ### Compiles and hot-reloads for development
