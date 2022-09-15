@@ -1,4 +1,4 @@
-# todo-app
+# TODO-APP
 
 [Github Repository](https://github.com/biankazieba/modul_294)
 
