@@ -58,6 +58,10 @@ See [Configuration Reference]().
 
   ![logout](assets/img/logout.png)
 
+- Pressing the "Bianka Zieba" button, the page should switch to my own Github
+
+  ![github](assets/img/githubpng.png)
+
 - You should see the todos as well
 
   ![todos](assets/img/tasks.png)
@@ -83,3 +87,4 @@ See [Configuration Reference]().
 - By entering a empty description, this error should pop up
 
   ![error1](assets/img/empty.png)
+
